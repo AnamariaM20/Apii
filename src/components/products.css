@@ -1,0 +1,6 @@
+.products li {
+    background-color: beige;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
