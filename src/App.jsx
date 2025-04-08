@@ -1,18 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Create from "./Create";
-import Read from "./Read";
-import Home from "./Home";
-import Login from "./Login";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import EditProduct from "./EditProduct";
-
-function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  return (
-    <BrowserRouter>
-      <Routes>
+import Bookings from "./Bookings";
+import FetchData from "./FetchData";
+import DinamicTable from "./DinamicTable";
+import Pokemon from "./Pokemon";
+{/* <Routes>
         {!isAuthenticated ? (
           <Route path="*" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
         ) : (
@@ -23,7 +17,18 @@ function App() {
             <Route path="/read/:id" element={<Read />} />
           </>
         )}
-      </Routes>
+      </Routes> */}
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  return (
+    <BrowserRouter>
+      <Pokemon></Pokemon>
+      <DinamicTable></DinamicTable>
+      {/* <FetchData></FetchData> */}
+      
+
     </BrowserRouter>
   );
 }
