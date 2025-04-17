@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Row from '../../Components/Row/Row';
+import { useTranslation } from "react-i18next";
 
 
 const haversineDistance = (coords1, coords2) => {
@@ -26,7 +27,7 @@ const TableComponent = ({ items, myLocation }) => {
     const [sortByDistance, setSortByDistance] = useState(false);
     const [distanceAsc, setDistanceAsc] = useState(true);
     const [alphaAsc, setAlphaAsc] = useState(true);
-
+    const { t } = useTranslation();
 
     const sortedItems = useMemo(() => {
         if (!items || items.length === 0) return [];
@@ -61,7 +62,7 @@ const TableComponent = ({ items, myLocation }) => {
                         setSortByDistance(true);
                         setDistanceAsc(prev => !prev);
                     }}>
-                    Sortează după distanță ({distanceAsc ? 'Vicio → Lontano' : 'Lontano → Vicio'})
+                     {distanceAsc ? t('order.distanceNF') : t('order.distanceFN')}
                 </button>
             )}
             <button style={{ color: "red" }}
@@ -69,7 +70,7 @@ const TableComponent = ({ items, myLocation }) => {
                     setSortByDistance(false);
                     setAlphaAsc(prev => !prev);
                 }}>
-                {alphaAsc ? 'DA A - Z' : 'DA Z - A'}
+                {alphaAsc ? t('order.alphaAZ') : t('order.alphaZA')}
             </button>
 
             <table>

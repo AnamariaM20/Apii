@@ -1,0 +1,25 @@
+{
+    "button": {
+      "showMap": "Show map",
+      "hideMap": "Hide map"
+    },
+
+    "order": {
+        "distanceNF": "Order by distance:  Nearest - Farthest",
+        "distanceFN": "Order by distance:  Farthest - Nearest",
+        "alphaAZ" : "From A to Z",
+        "alphaZA": "From Z to A"
+    },
+
+    "title": {
+      "titolo" : "My API Project", 
+      "sidebar1": "Users",
+      "sidebar2": "Posts",
+      "sidebar3": "Comments",
+      "sidebar4": "Table"
+    
+    }
+
+
+}
+  

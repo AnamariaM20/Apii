@@ -1,0 +1,24 @@
+
+{
+    "button": {
+      "showMap": "Mostra mappa",
+      "hideMap": "Nascondi mappa"
+    },
+
+    "order": {
+        "distanceNF": "Ordina dopo distanza :  Piu Vicino - Piu Lontano",
+        "distanceFN": "Ordina dopo distanza:  Piu Lontano - Piu Vicino",
+        "alphaAZ" : "Dalla A alla Z",
+        "alphaZA": "Dalla Z alla A"
+    },
+
+    "title": {
+      "titolo" : "Il mio Proggetto", 
+      "sidebar1": "Utenti",
+      "sidebar2": "Messaggi",
+      "sidebar3": "Commenti",
+      "sidebar4": "Tabella"
+    
+    }
+
+  }
