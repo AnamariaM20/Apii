@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import Sidebar from "./Sidebar.jsx/Index";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Bookings from "./Bookings";
-import FetchData from "./FetchData";
-import DinamicTable from "./DinamicTable";
-import Pokemon from "./Pokemon";
+import Placeholder from "./Components/Placeholder";
+import Table from "./Components/Table/Table";
 {/* <Routes>
         {!isAuthenticated ? (
           <Route path="*" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
@@ -20,16 +20,31 @@ import Pokemon from "./Pokemon";
       </Routes> */}
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [reqType, setReqType] = useState("users");
 
   return (
-    <BrowserRouter>
-      <Pokemon></Pokemon>
-      <DinamicTable></DinamicTable>
-      {/* <FetchData></FetchData> */}
-      
 
-    </BrowserRouter>
+
+      <Router>
+        
+        <div style={{ display: "flex" }}>
+          <Sidebar reqType={reqType} setReqType={setReqType} />
+          
+          <div style={{ flex: 1, padding: "1rem" }}>
+            <Routes>
+              <Route path="/" element={<Navigate to="/placeholder/users" />} />
+              <Route
+                path="/placeholder/:reqType"
+                element={
+                  <Placeholder reqType={reqType} setReqType={setReqType} />
+                }
+              />
+              <Route path="/table" element={<Table/>}/>
+            </Routes>
+          </div>
+        </div>
+      </Router>
+  
   );
 }
 
